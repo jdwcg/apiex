@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내장객체</title>
+  </head>
+  <body>
+    <script>
+      /*
+     현재 날짜부터 연말까지 며칠이 남았는지 날짜 정보 객체를 이용해 알아보자.
+     남은 일수(밀리초) = 특정날 객체 - 현재 날짜 객
+     1초 = 1,000(msc)
+     1분(60초) = 1,000 * 60
+     1시간(60분) = 1,000 * 60 * 60
+     1일(60분 *24) 1,000 * 60 * 60 * 24
+     */
+
+      var today = new Date();
+      var nowYear = today.getFullYear();
+
+      var theDate = new Date(nowYear, 7, 22);
+      var diffDate = theDate.getTime() - today.getTime();
+
+      var result = Math.ceil(diffDate / (60 * 1000 * 60 * 24));
+      document.write("연말 D-day:" + result + "일 남았습니다.");
+    </script>
+  </body>
+</html>
